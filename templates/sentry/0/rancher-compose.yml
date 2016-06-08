@@ -12,6 +12,12 @@
       label: "SENTRY_SECRET_KEY"
       description: "A secret key used for cryptographic functions within Sentry. see https://hub.docker.com/_/sentry/ for more info"
 
+    - variable: "sentry_public_port"
+      type: "int"
+      required: false
+      label: "Sentry public port"
+      description: "Port that Sentry will listen on. Alternatively you could point a load balancer to the port 9000 of this container"
+
     - variable: "sentry_inital_user_email"
       type: "string"
       required: true
@@ -23,12 +29,6 @@
       required: true
       label: "SENTRY_INITAL_USER_PASSWORD"
       description: "The initial superuser password"
-
-    - variable: "sentry_public_port"
-      type: "int"
-      required: false
-      label: "Sentry public port"
-      description: "Port that Sentry will listen on. Alternatively you could point a load balancer to the port 9000 of this container"
 
     - variable: "sentry_server_email"
       type: "string"
