@@ -11,8 +11,6 @@ sentry-postgres:
   tty: true
   log_opt: {}
   image: postgres:9.5.3
-  volumes:
-  - /data/sentry/postgres:/data
   stdin_open: true
 sentry-celery-beat:
   environment:
