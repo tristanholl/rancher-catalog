@@ -12,6 +12,18 @@
       label: "SENTRY_SECRET_KEY"
       description: "A secret key used for cryptographic functions within Sentry. see https://hub.docker.com/_/sentry/ for more info"
 
+    - variable: "sentry_inital_user_email"
+      type: "string"
+      required: true
+      label: "SENTRY_INITAL_USER_EMAIL"
+      description: "The initial superuser email"
+
+    - variable: "sentry_inital_user_password"
+      type: "password"
+      required: true
+      label: "SENTRY_INITAL_USER_PASSWORD"
+      description: "The initial superuser password"
+
     - variable: "sentry_public_port"
       type: "int"
       required: false
@@ -37,7 +49,7 @@
       description: "The username for the email account. see https://hub.docker.com/_/sentry/ for more info"
 
     - variable: "sentry_email_password"
-      type: "string"
+      type: "password"
       required: false
       label: "SENTRY_EMAIL_PASSWORD"
       description: "The password for the email account. see https://hub.docker.com/_/sentry/ for more info"

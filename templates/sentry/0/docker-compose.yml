@@ -63,6 +63,10 @@ sentry:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:host_label: app.sentry=true
   tty: true
+  command:
+  - /bin/bash
+  - -c
+  - sentry upgrade --noinput && sentry createuser --email ${sentry_inital_user_email} --password ${sentry_inital_user_password} --superuser && /docker-entrypoint.sh run web || /docker-entrypoint.sh run web
   log_opt: {}
   image: sentry:8.4.1
   links:
